@@ -3,6 +3,7 @@ import './App.css';
 import { Route, Routes } from "react-router-dom"
 
 import { ReviewList } from './Components/ReviewList';
+import { ReviewPage } from './Components/ReviewPage';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       </header>
       <Routes>
         <Route path="/" element={<ReviewList />} />
+        <Route path="/review/:review_id" element={<ReviewPage />} />
       </Routes>
 
     </div>

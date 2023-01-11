@@ -1,9 +1,33 @@
-export const ReviewCard = ({ title, designer, owner, review_img_url, review_body, category, created_at, votes}) =>{
-    return(
+import { Link } from "react-router-dom";
+
+
+export const ReviewCard = ({ review_id, title, designer, owner, review_img_url, review_body, category, created_at, votes, comment_count }) => {
+
+    return (
+        <Link to={`/review/${review_id}`} className="ReviewCardLinks" >
         <li className="ReviewCard" >
-            <p className="reviewTitle">{title}</p>
-            <img className="reviewImage" src={`${review_img_url}`} alt={`${title}`} />
+            
+            <img className="reviewImage" src={review_img_url} alt={title} />
+            <section className="ReviewCardText">
+                
+                <h3 className="reviewTitle">{title}</h3>
+
+            <section className="reviewInfo">
+                <span className="reviewInfoTitles" > Votes: </span>
+                <span className="reviewInfoValues"> {votes} </span>
+                <span className="reviewInfoTitles"> Comments: </span>
+                <span className="reviewInfoValues">{comment_count} </span>
+                <span className="reviewInfoTitles"> Created: </span>
+                <span className="reviewInfoValues">{created_at} </span>
+            </section>
+
+            </section>
+
+
+
         </li>
+        </Link>
+
 
     )
 }
