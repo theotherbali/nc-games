@@ -12,9 +12,13 @@ export const getReviews = () => {
 }
 
 export const getReviewByID = (review_id) => {
-    console.log(review_id)
     return gamesApi.get(`/reviews/${review_id}`).then((res) => {
-        console.log(res.data)
         return res.data.reviews
+    })
+}
+
+export const getCommentsByReviewId = (review_id) => {
+    return gamesApi.get(`/reviews/${review_id}/comments`).then((res) => {
+        return res.data.comments
     })
 }
