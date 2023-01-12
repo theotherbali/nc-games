@@ -5,37 +5,40 @@ import { ReviewCard } from "./ReviewCard"
 
 export const ReviewList = () => {
 
-    const [reviews, setReviews] = useState({})
+    const [reviews, setReviews] = useState([])
     const [isError, setIsError] = useState(false)
     const [isLoading, setIsLoading] = useState(true)
-
     useEffect(() => {
+        setIsError(false);
+        setIsLoading(true);
 
-        getReviews().then((reviewData) => {
-            setIsLoading(false)
-            setReviews(reviewData)
-        })
-            .catch((error) => {
+        getReviews()
+            .then((reviewData) => {
+                setReviews(reviewData)
                 setIsLoading(false)
+
+            })
+            .catch((error) => {
                 setIsError(true)
+                setIsLoading(false)
             }
             )
-    })
+    }, [])
 
     if (isError) {
         return <p>There's been an error</p>
     }
 
-    if(isLoading) {
+    if (isLoading) {
         return <p>Loading...</p>
     }
 
     return (
         <main key="ReviewListingPage">
-            <h2>a list of reviews</h2>
+            <h2>All Reviews</h2>
             <ul className="ReviewList" key="ReviewList" >
-                {reviews.map((review) => (<ReviewCard key={review.id} title={review.title} designer={review.designer} owner={review.designer} review_img_url={review.review_img_url} review_body={review.review_body} category={review.category} created_at={review.created_at} votes={review.votes}  />
-                    ))}
+                {reviews.map((review) => (<ReviewCard key={review.review_id} {...review} />
+                ))}
             </ul>
         </main>
     )
