@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { getCommentsByReviewId } from "../utils/api";
 import { DateFormatter } from "./DateFormatter";
 
-export const Comments = ({ review_id, comment_count }) => {
+export const Comments = ({ review_id, comment_count}) => {
 
     const [comments, setComments] = useState([])
     const [isError, setIsError] = useState(false)

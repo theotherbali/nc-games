@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { getReviewByID } from "../utils/api";
-import { Comments } from "./Comments";
+import { CommentsSection } from "./CommentsSection";
 import { ReviewPageInfo } from "./ReviewPageInfo";
 
 
@@ -55,12 +55,8 @@ export const ReviewPage = () => {
                <ReviewPageInfo {...review} />
 
             </section>
-            
-            <section className="CommentSection">
-                <h3>Comments</h3>
-                <Comments review_id={review_id} comment_count={review.comment_count}/>
 
-            </section>
+            <CommentsSection review_id={review_id} comment_count={review.comment_count}/>
 
         </main>
 

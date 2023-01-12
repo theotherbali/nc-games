@@ -28,3 +28,10 @@ export const patchReviewVoteCount = (review_id, votesAdded) => {
         return res.data.review.votes
     })
 }
+
+export const postComment = (review_id, username, commentText) => {
+    return gamesApi.post(`/reviews/${review_id}/comments`, {username: username, body: commentText }).then((res) => {
+        console.log(res.data)
+        return res.data
+    })
+}
