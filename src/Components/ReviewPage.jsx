@@ -10,8 +10,6 @@ export const ReviewPage = () => {
     const [isError, setIsError] = useState(false)
     const [isLoading, setIsLoading] = useState(true)
     const { review_id } = useParams()
-
-    console.log(review_id)
     
     useEffect(() => {
         setIsError(false);
@@ -55,8 +53,6 @@ export const ReviewPage = () => {
             <section className="reviewPageInfo">
                 <span className="reviewPageInfoTitles" > Votes: </span>
                 <span className="reviewPageInfoValues"> {review.votes} </span>
-                {/* <span className="reviewInfoTitles"> Comments: </span>
-                <span className="reviewInfoValues">{review.comment_count} </span> */}
                 <span className="reviewPageInfoTitles"> Created: </span>
                 <span className="reviewPageInfoValues">{review.created_at} </span>
             </section>
