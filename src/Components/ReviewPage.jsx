@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { getReviewByID } from "../utils/api";
 import { Comments } from "./Comments";
+import { ReviewPageInfo } from "./ReviewPageInfo";
 
 
 export const ReviewPage = () => {
@@ -51,14 +52,7 @@ export const ReviewPage = () => {
                     <p>{review.review_body}</p>
                 </section>
 
-                <section className="reviewPageInfo">
-                    <span className="reviewPageInfoTitles" > Votes: </span>
-                    <span className="reviewPageInfoValues"> {review.votes} </span>
-                    <span className="reviewPageInfoTitles"> Comments: </span>
-                    <span className="reviewPageInfoValues">{review.comment_count} </span>
-                    <span className="reviewPageInfoTitles"> Created: </span>
-                    <span className="reviewPageInfoValues">{review.created_at} </span>
-                </section>
+               <ReviewPageInfo {...review} />
 
             </section>
             
