@@ -79,6 +79,19 @@
   flex-wrap: wrap;
 }
 
+.VotingButton{
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: none;
+}
+
+.VoteButtonImage{
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+}
+
 .reviewInfoTitles{
   font-weight: 600;
   padding-left: 5px;
@@ -176,4 +189,16 @@
   font-weight: 600;
 }
 
+.commentPageInfo{
+  font-size: 11px;
+}
+
+.commentPageInfoTitles{
+  font-weight: 500;
+  text-transform:uppercase ;
+}
+
+.commentPageInfoValues{
+  font-weight: 300;
+}
 

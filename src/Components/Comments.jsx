@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { getCommentsByReviewId } from "../utils/api";
+import { DateFormatter } from "./DateFormatter";
 
 export const Comments = ({ review_id, comment_count }) => {
 
@@ -59,7 +60,8 @@ export const Comments = ({ review_id, comment_count }) => {
                     <span className="commentPageInfoTitles" > Votes: </span>
                     <span className="commentPageInfoValues"> {comment.votes} </span>
                     <span className="commentPageInfoTitles"> Created: </span>
-                    <span className="commentPageInfoValues">{comment.created_at} </span>
+                    <DateFormatter created_at={comment.created_at} />
+
                 </p>
             </section>)
         })

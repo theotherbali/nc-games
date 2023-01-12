@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { DateFormatter } from "./DateFormatter";
+
 
 
 export const ReviewCard = ({ review_id, title, designer, owner, review_img_url, review_body, category, created_at, votes, comment_count }) => {
@@ -18,7 +20,7 @@ export const ReviewCard = ({ review_id, title, designer, owner, review_img_url, 
                 <span className="reviewInfoTitles"> Comments: </span>
                 <span className="reviewInfoValues">{comment_count} </span>
                 <span className="reviewInfoTitles"> Created: </span>
-                <span className="reviewInfoValues">{created_at} </span>
+                <DateFormatter created_at={created_at} />
             </section>
 
             </section>
