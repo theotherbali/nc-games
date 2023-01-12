@@ -23,8 +23,8 @@ export const getCommentsByReviewId = (review_id) => {
     })
 }
 
-export const patchReviewVoteCount = (review_id) => {
-    return gamesApi.patch(`/reviews/${review_id}`, { inc_votes: 1 }).then((res) => {
+export const patchReviewVoteCount = (review_id, votesAdded) => {
+    return gamesApi.patch(`/reviews/${review_id}`, { inc_votes: votesAdded }).then((res) => {
         return res.data.review.votes
     })
 }

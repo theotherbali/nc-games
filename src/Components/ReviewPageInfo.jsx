@@ -7,26 +7,40 @@ import fullHeart from "../images/iconvoted.png"
 export const ReviewPageInfo = ({ review_id, votes, comment_count, created_at }) => {
 
     const [voteCount, setVoteCount] = useState(votes)
+
     const [voteImage, setVoteImage] = useState(emptyHeart)
     const [errMessage, setErrMessage ] = useState("")
     const [alreadyVoted, setAlreadyVoted] = useState(false)
     let voteNumber = (votes*1)
+    let votesAdded = 1
     
     const handleClick = (event) => {
         event.preventDefault();
         if(!alreadyVoted){
-        voteNumber += 1
-        setVoteCount(JSON.stringify(voteNumber))
+        setVoteCount(JSON.stringify(voteNumber +1))
         setVoteImage(fullHeart)
         setAlreadyVoted(true)
+        votesAdded = 1
 
-        patchReviewVoteCount(review_id).catch( (error) => {
-            voteNumber -= 1
+        patchReviewVoteCount(review_id, votesAdded).catch( (error) => {
             setVoteCount(JSON.stringify(voteNumber))
             setVoteImage(emptyHeart)
             setAlreadyVoted(false)
             setErrMessage("Something went wrong, please try again!")
         })
+    } else {
+        setVoteCount(JSON.stringify(voteNumber))
+        setVoteImage(emptyHeart)
+        setAlreadyVoted(false)
+        votesAdded = -1
+
+        patchReviewVoteCount(review_id, votesAdded).catch( (error) => {
+            setVoteCount(JSON.stringify(voteNumber +1))
+            setVoteImage(fullHeart)
+            setAlreadyVoted(true)
+            setErrMessage("Something went wrong, please try again!")
+        })
+
     }
     }
 
