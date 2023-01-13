@@ -213,3 +213,8 @@
   height: 10vh;
   
 }
+
+.commentPostedNotification{
+  color: green;
+  padding-bottom: 5px;
+}

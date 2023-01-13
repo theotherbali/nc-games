@@ -49,7 +49,7 @@ export const CommentCreator = ({ review_id }) => {
         return(
         
         <section>
-            <p>Your comment has been posted: </p>
+            <p id="commentPostedNotification">Your comment has been posted: </p>
         <section className="IndividualComment">
             <p className="CommentAuthor"> {newComment.author} </p>
             <p>{newComment.body}</p>
