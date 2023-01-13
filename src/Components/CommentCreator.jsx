@@ -1,7 +1,6 @@
 import { useState } from "react"
 import { postComment } from "../utils/api"
 import { DateFormatter } from "./DateFormatter"
-import { NewCommentRender } from "./NewCommentRender"
 
 export const CommentCreator = ({ review_id }) => {
 
@@ -35,12 +34,11 @@ export const CommentCreator = ({ review_id }) => {
             setIsLoading(false)
             setIsError(true)
             setDisabled(false)
-            console.log(error)
             })
     }
 
     if(isError){
-        return(<p>"There was an error posting your comment, please try again!"</p>)
+        return(<p>"There was an error posting your comment, please ensure your username is correct and try again!"</p>)
     }
 
     if(isLoading){
@@ -74,12 +72,12 @@ export const CommentCreator = ({ review_id }) => {
                 <form onSubmit={handleSubmit}>
                     <label>
                         Username:
-                        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+                        <input className="commentInput" type="text" required="true" value={username} onChange={(e) => setUsername(e.target.value)} />
                     </label>
                     <br />
                     <label>
                         Comment:
-                        <input type="text" value={commentText} onChange={(e) => setCommentText(e.target.value)} />
+                        <input className="commentInput" id="commentText" type="text" required="true" value={commentText} onChange={(e) => setCommentText(e.target.value)} />
 
                     </label>
                     <br />
