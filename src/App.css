@@ -162,7 +162,7 @@
 
 /* Comments Section */
 
-.CommentSection{
+.CommentsSection{
   text-align: left;
   
   margin-left: 10vw;
@@ -202,3 +202,14 @@
   font-weight: 300;
 }
 
+.commentInput{
+  margin-left: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#commentText{
+  width: 50vw;
+  height: 10vh;
+  
+}
