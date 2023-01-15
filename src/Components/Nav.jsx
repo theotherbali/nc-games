@@ -19,10 +19,9 @@ export const Nav = () => {
 
 
     return (
-        <nav>
-            <button onClick={handleClick}>Categories</button>
-            <button>Users</button>
-            <br/>
+        <nav  >
+            <button className="navigationButton" onClick={handleClick}>Categories</button>
+            <button className="navigationButton">Users</button>
             <section>
                 <CategoryLinks showCategoryLinks={showCategoryLinks} />
             </section>

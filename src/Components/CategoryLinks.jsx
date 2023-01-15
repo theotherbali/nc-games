@@ -8,11 +8,11 @@ export const CategoryLinks = ({showCategoryLinks}) => {
     if(showCategoryLinks){
     return (
         <section className="navLinks" >
-            <Link to="/" className="categorylinks"> <span> all games</span> </Link>
+            <Link to="/" className="categorylinks"> <span className="categoryLinkText"> all games</span> </Link>
 
             {navCategories.map((category) => {
                 return (
-                    <Link to={`/category/${category}`} className="categorylinks"> <span >{category}</span> </Link>)
+                    <Link to={`/category/${category}`} className="categorylinks"> <span className="categoryLinkText" >{category}</span> </Link>)
             })}
         </section>
     )}
