@@ -12,7 +12,7 @@ export const CategoryLinks = ({showCategoryLinks}) => {
 
             {navCategories.map((category) => {
                 return (
-                    <Link to={`/category/${category}`} className="categorylinks"> <span className="categoryLinkText" >{category}</span> </Link>)
+                    <Link to={`/category/${category}`} key={category} className="categorylinks"> <span className="categoryLinkText" >{category}</span> </Link>)
             })}
         </section>
     )}

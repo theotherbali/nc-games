@@ -19,7 +19,10 @@
 
 .appTitle{
   text-decoration: none;
+}
 
+.appTitle:hover{
+  color: #FFF65B;;
 }
 
 h1{
@@ -27,11 +30,11 @@ h1{
                0px 0px 10px rgba(118, 133, 137, 0.15),
                0px 0px 10px rgba(118, 133, 137, 0.2),
                0px 0px 20px rgba(118, 133, 137, 0.25);
-font-size: 55px;
 font-weight: 600;
 color: #fdfdfe;
 text-decoration: none;
 text-transform: uppercase;
+font-size: 8vw;
 }
 
 .App-link {
