@@ -19,15 +19,15 @@ export const Nav = () => {
 
 
     return (
-        <Nav>
+        <nav>
             <button onClick={handleClick}>Categories</button>
             <button>Users</button>
-
+            <br/>
             <section>
                 <CategoryLinks showCategoryLinks={showCategoryLinks} />
             </section>
 
-        </Nav>
+        </nav>
 
     )
 }

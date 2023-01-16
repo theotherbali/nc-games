@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { CommentCreator } from "./CommentCreator"
 import { Comments } from "./Comments"
 

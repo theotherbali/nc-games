@@ -1,11 +1,14 @@
-export const CategoryLinks = (showCategoryLinks) => {
+import { Link } from "react-router-dom";
 
-    const navCategories = ["Strategy", "Hidden-Roles", "Dexterity", "Push-Your-Luck", "Roll-and-Write", "Deck-Building", "Engine-Building"]
+
+export const CategoryLinks = ({showCategoryLinks}) => {
+
+    const navCategories = ["strategy", "hidden-roles", "dexterity", "push-your-luck", "roll-and-write", "deck-building", "engine-building"]
 
     if(showCategoryLinks){
     return (
         <section className="navLinks" >
-            <Link to="/" className="categorylinks"> <span> All Games</span> </Link>
+            <Link to="/" className="categorylinks"> <span> all games</span> </Link>
 
             {navCategories.map((category) => {
                 return (
