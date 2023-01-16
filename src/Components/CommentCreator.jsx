@@ -38,18 +38,18 @@ export const CommentCreator = ({ review_id }) => {
     }
 
     if(isError){
-        return(<p>"There was an error posting your comment, please ensure your username is correct and try again!"</p>)
+        return(<p className="commentNotPostedNotification" >There was an error posting your comment, please ensure your username is correct and try again!</p>)
     }
 
     if(isLoading){
-        return(<p>"Loading..."</p>)
+        return(<p className="commentNotPostedNotification" >Loading...</p>)
     }
 
     if(commentPosted){
         return(
         
         <section>
-            <p id="commentPostedNotification">Your comment has been posted: </p>
+            <p className="commentPostedNotification">Your comment has been posted: </p>
         <section className="IndividualComment">
             <p className="CommentAuthor"> {newComment.author} </p>
             <p>{newComment.body}</p>
@@ -81,7 +81,7 @@ export const CommentCreator = ({ review_id }) => {
 
                     </label>
                     <br />
-                    <button>Post Comment</button>
+                    <button className="commentPostButton">Post Comment</button>
                 </form>
             </fieldset>
         </section>
