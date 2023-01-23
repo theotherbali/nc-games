@@ -6,7 +6,7 @@ import { DateFormatter } from "./DateFormatter";
 export const ReviewCard = ({ review_id, title, designer, owner, review_img_url, review_body, category, created_at, votes, comment_count }) => {
 
     return (
-        <Link to={`/review/${review_id}`} className="ReviewCardLinks" >
+        <Link to={`/review/${review_id}`} className="CardLinks" >
         <li className="ReviewCard" >
             
             <img className="reviewImage" src={review_img_url} alt={title} />

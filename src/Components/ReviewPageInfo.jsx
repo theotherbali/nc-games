@@ -46,7 +46,7 @@ export const ReviewPageInfo = ({ review_id, votes, comment_count, created_at }) 
 
     return (<section className="reviewPageInfo">
 
-        <button className="VotingButton" onClick={handleClick}><img className="VoteButtonImage" src={voteImage} alt="vote" /></button>
+        <button className="buttonStyling"  id="VotingButton" onClick={handleClick}><img className="VoteButtonImage" src={voteImage} alt="vote" /></button>
         <p>{errMessage}</p>
         <span className="reviewPageInfoTitles" > Votes: </span>
         <span className="reviewPageInfoValues"> {voteCount} </span>

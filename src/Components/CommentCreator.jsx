@@ -1,12 +1,9 @@
 import { useState } from "react"
-import { postComment } from "../utils/api"
+import { getUsers, postComment } from "../utils/api"
 import { DateFormatter } from "./DateFormatter"
 
 export const CommentCreator = ({ review_id }) => {
-
-
-    // NEED TO CHANGE COMMENT ORDER SO MOST RECENT COMES FIRST!!
-
+    
     const [username, setUsername] = useState("")
     const [commentPosted, setCommentPosted] = useState(false)
     const [isLoading, setIsLoading] = useState(false)
@@ -14,6 +11,23 @@ export const CommentCreator = ({ review_id }) => {
     const [disabled, setDisabled] = useState(false)
     const [newComment, setNewComment] = useState({})
     const [isError, setIsError] = useState(false)
+    const [checkMessage, setCheckMessage] = useState("")
+
+    let usernamesCheck = []
+
+    const handleBlur = (event) => {
+        getUsers().then((users) => {
+            users.map((user) => {
+                return usernamesCheck.push(user.username)
+            })
+            if(!usernamesCheck.contains(event.target.value)){
+                setCheckMessage("Username not recognised!")
+            }  
+        }).catch((error) => {
+            setCheckMessage("error confirming username")
+        })
+    }
+
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -72,16 +86,18 @@ export const CommentCreator = ({ review_id }) => {
                 <form onSubmit={handleSubmit}>
                     <label>
                         Username:
-                        <input className="commentInput" type="text" required="true" value={username} onChange={(e) => setUsername(e.target.value)} />
+                        <input className="commentInput" type="text" required={true} value={username} onChange={(e) => setUsername(e.target.value)} onBlur={handleBlur} />
                     </label>
+                    <br />
+                    <p>{checkMessage}</p>
                     <br />
                     <label>
                         Comment:
-                        <input className="commentInput" id="commentText" type="text" required="true" value={commentText} onChange={(e) => setCommentText(e.target.value)} />
+                        <input className="commentInput" id="commentText" type="text" required={true} value={commentText} onChange={(e) => setCommentText(e.target.value)} />
 
                     </label>
                     <br />
-                    <button className="commentPostButton">Post Comment</button>
+                    <button className="buttonStyling" id="commentPostButton">Post Comment</button>
                 </form>
             </fieldset>
         </section>

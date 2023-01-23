@@ -42,7 +42,7 @@ export const ReviewRender = ({sort_by, order}) => {
 
     return (
         <section>
-            <ul className="ReviewList" key="ReviewList" >
+            <ul className="List" >
                 {reviews.map((review) => (<ReviewCard key={review.review_id} {...review} />
                 ))}
             </ul>

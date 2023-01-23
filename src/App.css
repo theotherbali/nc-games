@@ -7,7 +7,7 @@
 
 .App-header {
   background-color: #303030;
-  height: 25vh;
+  height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,10 +18,21 @@
 }
 
 .appTitle{
-  text-decoration: none;
+  text-shadow: 0px 0px 5px rgba(118, 133, 137, 0.1),
+  0px 0px 10px rgba(118, 133, 137, 0.15),
+  0px 0px 10px rgba(118, 133, 137, 0.2),
+  0px 0px 20px rgba(118, 133, 137, 0.25);
+font-weight: 600;
+color: #fdfdfe;
+text-decoration: none;
+text-transform: uppercase;
+font-size: 4vw;
 }
 
-h1{
+.appTitle:hover{
+  color: #FFF65B;
+}
+/* h1{
   text-shadow: 0px 0px 5px rgba(118, 133, 137, 0.1),
                0px 0px 10px rgba(118, 133, 137, 0.15),
                0px 0px 10px rgba(118, 133, 137, 0.2),
@@ -35,7 +46,7 @@ font-size: 9vw;
 
 h1:hover{
   color: #FFF65B;
-}
+} */
 
 nav {
 	position: relative;
@@ -45,8 +56,9 @@ nav {
 	flex-direction: column;
 }
 
-button {
-	display: block;
+.buttonStyling {
+  text-decoration: none;
+  display: block;
 	position: relative;
 	margin: 0.5em 2em;
 	padding: .8em 2.2em;
@@ -66,12 +78,10 @@ button {
 	perspective: 500px;
 }
 
-button:hover {
-		background-color: #FFF65B;
-		transition: background .3s 0.1s;
-	}
-
-
+.buttonStyling:hover{
+  background-color: #FFF65B;
+	transition: background .3s 0.1s;
+}
 
 .categorylinks{
   padding: 5px;
@@ -113,7 +123,7 @@ button:hover {
   
 }
 
-.ReviewList{
+.List{
   padding: 0 8vw;
 }
 
@@ -177,14 +187,14 @@ button:hover {
   flex-wrap: wrap;
 }
 
-.VotingButton{
+#VotingButton{
   width: 30px;
   height: 30px;
   background: none;
   border: none;
   display: inline-block;
 }
-.VotingButton:hover{
+#VotingButton:hover{
   background-color: white;
 }
 
@@ -245,10 +255,9 @@ button:hover {
   font-weight: 300;
 }
 
-.ReviewCardLinks{
+.CardLinks{
   text-decoration: none;
   color: black;
-
 }
 
 #reviewPageOwner{
@@ -303,7 +312,7 @@ button:hover {
   text-align: start;
 }
 
-.commentPostButton{
+#commentPostButton{
   border: 1px solid black;
   border-radius: .4em;
 }
@@ -324,3 +333,46 @@ button:hover {
   padding-bottom: 5px;
 }
 
+.UserCardList{
+  display: inline-flex;
+  border: #282c34 2px solid;
+  margin: 5px;
+  grid-template-rows: auto auto;
+  height: 220px;
+  width: 170px;
+  align-items: center;
+}
+
+.UserCard{
+  display: grid;
+  grid-template-columns: auto ;
+  grid-template-areas:
+  "image"
+  "text";
+  height: 210px;
+  width: 160px;
+  text-decoration: none;
+  color: black;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.UserCard:hover{
+  color: grey;
+}
+
+.userImage{
+  object-fit: contain;
+  width: 100px;
+  height: 100px;
+  grid-area: image;
+  padding-left: 30px;
+  padding-right: 30px;
+
+}
+
+.userDetails{
+  grid-area: text;
+  padding: 10px 10px 0px 10px;
+  box-sizing:border-box;
+}

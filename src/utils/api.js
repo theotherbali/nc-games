@@ -44,3 +44,9 @@ export const postComment = (review_id, username, commentText) => {
         return res.data
     })
 }
+
+export const getUsers = () => {
+    return gamesApi.get('/users/').then((res) => {
+        return res.data.users
+    })
+}
