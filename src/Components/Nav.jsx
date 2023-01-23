@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { CategoryLinks } from "./CategoryLinks";
 
 
@@ -19,10 +20,9 @@ export const Nav = () => {
 
 
     return (
-        <nav>
-            <button onClick={handleClick}>Categories</button>
-            <button>Users</button>
-            <br/>
+        <nav  >
+            <button className="buttonStyling" onClick={handleClick}>Categories</button>
+            <Link to="/users" className="buttonStyling">Users</Link>
             <section>
                 <CategoryLinks showCategoryLinks={showCategoryLinks} />
             </section>

@@ -1,28 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
 .App {
   text-align: center;
+  font-family: "Poppins", sans-serif;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 10vh;
+  background-color: #303030;
+  height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  
 }
 
-.App-link {
-  color: #61dafb;
+.appTitle{
+  text-shadow: 0px 0px 5px rgba(118, 133, 137, 0.1),
+  0px 0px 10px rgba(118, 133, 137, 0.15),
+  0px 0px 10px rgba(118, 133, 137, 0.2),
+  0px 0px 20px rgba(118, 133, 137, 0.25);
+font-weight: 600;
+color: #fdfdfe;
+text-decoration: none;
+text-transform: uppercase;
+font-size: 4vw;
 }
 
-.ReviewList{
+.appTitle:hover{
+  color: #FFF65B;
+}
+/* h1{
+  text-shadow: 0px 0px 5px rgba(118, 133, 137, 0.1),
+               0px 0px 10px rgba(118, 133, 137, 0.15),
+               0px 0px 10px rgba(118, 133, 137, 0.2),
+               0px 0px 20px rgba(118, 133, 137, 0.25);
+font-weight: 600;
+color: #fdfdfe;
+text-decoration: none;
+text-transform: uppercase;
+font-size: 9vw;
+}
+
+h1:hover{
+  color: #FFF65B;
+} */
+
+nav {
+	position: relative;
+	margin: auto;
+	background: #181620;
+	display: flex;
+	flex-direction: column;
+}
+
+.buttonStyling {
+  text-decoration: none;
+  display: block;
+	position: relative;
+	margin: 0.5em 2em;
+	padding: .8em 2.2em;
+	cursor: pointer;
+
+	background: #FFFFFF;
+	border: none;
+	border-radius: .4em;
+
+	text-transform: uppercase;
+	font-size: 2vh;
+	font-family: "Work Sans", sans-serif;
+	font-weight: 500;
+	letter-spacing: 0.04em;
+
+	mix-blend-mode: color-dodge;
+	perspective: 500px;
+}
+
+.buttonStyling:hover{
+  background-color: #FFF65B;
+	transition: background .3s 0.1s;
+}
+
+.categorylinks{
+  padding: 5px;
+  border-bottom: rgb(94, 94, 94) solid 1px;
+  margin: 2px ;
+  text-decoration: none;
+  color: black;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  font-size: 12px;
+
+}
+.categorylinks:hover{
+  color: #fff200;
+}
+
+.navLinks{
+  background-color: rgb(211, 208, 208);
+  box-sizing: content-box;
+  padding-bottom: 3px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.categoryLinkText{
+  margin-top: 5px;
+}
+
+
+.navigation {
+	height: 10%;
+	display: flex;
+}
+
+.ReviewTitle{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  
+}
+
+.List{
   padding: 0 8vw;
 }
 
-
-/* review card */
 
 .ReviewCard{
   display: grid;
@@ -34,6 +138,10 @@
   grid-template-rows: auto;
   max-height: 350px;
   
+}
+
+.ReviewCard:hover{
+  color: grey;
 }
 
 .reviewImage {
@@ -79,11 +187,15 @@
   flex-wrap: wrap;
 }
 
-.VotingButton{
+#VotingButton{
   width: 30px;
   height: 30px;
   background: none;
   border: none;
+  display: inline-block;
+}
+#VotingButton:hover{
+  background-color: white;
 }
 
 .VoteButtonImage{
@@ -101,9 +213,6 @@
   padding-left: 2px;
   font-weight: 300;
 }
-
-
-/* review page */
 
 .ReviewPage{
   margin-bottom: 10vh;
@@ -146,12 +255,9 @@
   font-weight: 300;
 }
 
-/* Links to review cards */
-
-.ReviewCardLinks{
+.CardLinks{
   text-decoration: none;
   color: black;
-
 }
 
 #reviewPageOwner{
@@ -159,8 +265,6 @@
   font-size: 11px;  
 
 }
-
-/* Comments Section */
 
 .CommentsSection{
   text-align: left;
@@ -177,7 +281,6 @@
   padding-right: 5vw;
   padding-top: 5px;
   padding-bottom: 5px;
-
 
 }
 
@@ -206,6 +309,12 @@
   margin-left: 5px;
   margin-top: 5px;
   margin-bottom: 5px;
+  text-align: start;
+}
+
+#commentPostButton{
+  border: 1px solid black;
+  border-radius: .4em;
 }
 
 #commentText{
@@ -217,4 +326,53 @@
 .commentPostedNotification{
   color: green;
   padding-bottom: 5px;
+}
+
+.commentNotPostedNotification{
+  color: red;
+  padding-bottom: 5px;
+}
+
+.UserCardList{
+  display: inline-flex;
+  border: #282c34 2px solid;
+  margin: 5px;
+  grid-template-rows: auto auto;
+  height: 220px;
+  width: 170px;
+  align-items: center;
+}
+
+.UserCard{
+  display: grid;
+  grid-template-columns: auto ;
+  grid-template-areas:
+  "image"
+  "text";
+  height: 210px;
+  width: 160px;
+  text-decoration: none;
+  color: black;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.UserCard:hover{
+  color: grey;
+}
+
+.userImage{
+  object-fit: contain;
+  width: 100px;
+  height: 100px;
+  grid-area: image;
+  padding-left: 30px;
+  padding-right: 30px;
+
+}
+
+.userDetails{
+  grid-area: text;
+  padding: 10px 10px 0px 10px;
+  box-sizing:border-box;
 }
